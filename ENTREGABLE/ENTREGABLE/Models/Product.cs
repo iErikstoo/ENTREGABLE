@@ -7,9 +7,13 @@ namespace ENTREGABLE.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(128)]
         public string ProductName { get; set; }
+        [Required]
         public int SupplierId { get; set; }
         public decimal UnitPrice { get; set; }
+        [MaxLength(64)]
         public String Package { get; set; }
         public bool IsDiscontinued { get; set; } = false;
         [ForeignKey("SupplierId")]

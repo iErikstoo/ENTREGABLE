@@ -7,7 +7,9 @@ namespace ENTREGABLE.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public  DateTime OrderDate { get; set; } = DateTime.Now;
+        [MaxLength(128)]   
         public Guid OrderNumber { get; set; } = Guid.NewGuid(); //Establece un nuevo GUID por defecto
 
         [Required]
