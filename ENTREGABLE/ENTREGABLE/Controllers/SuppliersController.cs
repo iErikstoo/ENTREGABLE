@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using ENTREGABLE.Data;
+using ENTREGABLE.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> feature/MODELOS
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +15,29 @@ namespace ENTREGABLE.Controllers
     [ApiController]
     public class SuppliersController : ControllerBase
     {
+<<<<<<< HEAD
         // GET: api/<SuppliersController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
+=======
+        private readonly ApplicationDbContext _context;
+
+        public SuppliersController(ApplicationDbContext context)
+        {
+            this._context = context;  
+        }
+        // GET: api/<SuppliersController>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Supplier>>> Get()
+        {
+            if (_context.Suppliers == null)
+            {
+                return NotFound();
+            }
+            return await _context.Suppliers.ToListAsync();
+>>>>>>> feature/MODELOS
         }
 
         // GET api/<SuppliersController>/5
