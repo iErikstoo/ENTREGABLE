@@ -19,5 +19,6 @@ namespace ENTREGABLE.Models
         [ForeignKey("CustomerId")]
         public   Customer? Customer { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+
     }
 }

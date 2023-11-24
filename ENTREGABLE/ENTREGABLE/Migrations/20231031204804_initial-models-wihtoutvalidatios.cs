@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ENTREGABLE.Migrations
 {
     /// <inheritdoc />
-    public partial class initialmodelswihtoutvalidatios : Migration
+    public partial class Initialmodelswihtoutvalidatios : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

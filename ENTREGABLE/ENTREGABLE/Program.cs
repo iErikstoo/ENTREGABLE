@@ -1,5 +1,6 @@
 using ENTREGABLE.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 internal class Program
 {
@@ -17,8 +18,12 @@ internal class Program
 
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-
             options.UseSqlServer(connectionString));
+
+        builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
